@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  web:
+    container_name: webserver_dashboard
+    build:
+      context: ./
+    ports:
+      - 8080:80
+    volumes:
+      - ./:/app
+
