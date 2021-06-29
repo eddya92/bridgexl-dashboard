@@ -13,7 +13,10 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('base.html.twig'
-        );
+
+        $menuu=['ecommerce','profilo','backoffice','wallet'];
+        return $this->render('menu/leftMenu.html.twig',[
+            'menuu'=>$menuu
+        ]);
     }
 }

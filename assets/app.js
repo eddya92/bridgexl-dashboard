@@ -6,8 +6,8 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
-import './styles/eddy.css';
+import './styles/app.scss';
+import './styles/menu.scss';
 
 
 // start the Stimulus application
