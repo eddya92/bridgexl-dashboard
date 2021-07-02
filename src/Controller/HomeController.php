@@ -14,9 +14,27 @@ class HomeController extends AbstractController
     public function index(): Response
     {
 
-        $menuu=['ecommerce','profilo','backoffice','wallet'];
-        return $this->render('menu/leftMenu.html.twig',[
-            'menuu'=>$menuu
-        ]);
+        $base=['1','2','3'];
+        return $this->render('base.html.twig');
     }
+
+    /**
+     * @Route("/primo", name="primo")
+     */
+    public function red(): Response
+    {
+
+
+        return $this->render('menu/primo/primo.html.twig');
+    }
+
+    /**
+     * @Route("/secondo", name="secondo")
+     */
+    public function blu(): Response
+    {
+
+        return $this->render('menu/secondo.html.twig');
+    }
+
 }
