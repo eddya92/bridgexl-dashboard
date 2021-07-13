@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class WidgetWidget1Controller extends AbstractController
 {
-    public function renderWidget($params = [])
+    public function renderWidget($params = []): Response
     {
         return $this->render('widgets/widget1.html.twig');
 

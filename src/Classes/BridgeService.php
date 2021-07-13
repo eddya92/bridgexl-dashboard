@@ -9,7 +9,7 @@ class BridgeService extends AbstractController
 {
 
     /**
-     * Accetta una stringa(nome vista o widget)
+     * Accetta una stringa(nome vista o widget)+parametri opzionali
      * Ritorna un Controller(in base alla stringa che passiamo)
      * Il controller genera una vista o twig
      * @param string $widgetName

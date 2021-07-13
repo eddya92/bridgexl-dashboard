@@ -11,6 +11,10 @@ class BridgeTwigExtension extends AbstractExtension
 {
     private $bridgeService;
 
+    /**
+     * BridgeTwigExtension constructor.
+     * @param BridgeService $bridgeService
+     */
     public function __construct(BridgeService $bridgeService)
     {
         $this->bridgeService = $bridgeService;
@@ -18,10 +22,10 @@ class BridgeTwigExtension extends AbstractExtension
 
     /**
      * ci permette di creare funzioni per twig
-     * primo parametro,è il nome del metodo che verrà utilizzato per richiamarla nel twig,il secondo è il nome del metodo da php
+     * primo parametro,è il nome del metodo che verrà utilizzato per richiamarla nel twig,il secondo è il nome del metodo di questa classe
      * @return TwigFunction[]
      */
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
             new TwigFunction('renderWidget', [$this, 'renderWidget']),
@@ -29,13 +33,13 @@ class BridgeTwigExtension extends AbstractExtension
     }
 
     /**
-     * accetta il nome di un twig o widget
+     * accetta il nome di un twig o widget + parametri opzionali
      * ritorna la vista o il widget
      * @param string $widgetName
      * @param string $params
      * @return Markup
      */
-    public function renderWidget(string $widgetName, $params = [])
+    public function renderWidget(string $widgetName, $params = []): Markup
     {
         return new Markup($this->bridgeService->renderWidget($widgetName, $params), 'UTF-8');
     }
