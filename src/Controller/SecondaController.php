@@ -9,11 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SecondaController extends AbstractController
 {
 
-    ##[Route('/seconda', name:'getSeconda',methods: ['GET'] )]
-
-    /**
-     * @Route("/seconda", name="getSeconda", methods={"GET"})
-     */
+    #[Route('/seconda', name:'getSeconda',methods: ['GET'] )]
     public function getSeconda(): Response
     {
         return $this->render('pages/seconda.html.twig');

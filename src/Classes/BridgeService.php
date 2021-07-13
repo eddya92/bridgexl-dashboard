@@ -21,5 +21,7 @@ class BridgeService extends AbstractController
             'params' => $params
         ]);
         return $response->getContent();
+
     }
+
 }
